@@ -1,20 +1,46 @@
 
 #include <stdio.h>
-    int price[15];
+    int rowprice[15];
     int map[15][30];
+    int sold = 0;
     
 int prices(){
-    int row;
+    int row = 1;
     for (int count=1; count<=15; count++){
         printf("row:%d",row);
         row++;
-        printf(" $%d\n",price[count]);
+        printf(" $%d\n",rowprice[count]);
     }
     board();
 }
+
 int tickets(){
-    
+    int choice1;
+    int choice2;
+    int input = 0;
+    printf("please pick what row you would like\n");
+    scanf("%d\n", &choice1);
+    printf("row", choice1);
+    printf("please pick what seat you would like in that row\n");
+    scanf("%d\n", &choice2);
+    printf("row%d\n", choice1);
+    printf("seat%d\n", choice2);
+    choice1--;
+    choice2--;
+    map[choice1][choice2] = 1;
+    sold = sold + rowprice[choice1];
+    printf("Would you like to buy another ticket?\n");
+    printf("1. yes\n");
+    printf("2. no\n");
+    scanf("%d\n", &input);
+    if(input==1){
+        tickets();
+    }
+    else{
+        board();
+    }
 }
+
 int seats(){
     
     for(int count=0; count <=15; count++){
@@ -27,12 +53,14 @@ int seats(){
               printf("#");
           }
         }
+        printf("\n")
     }
     board();
     
 }
 int sales(){
-    
+    printf("You have sold $%d", sold);
+    printf("worth of tickets\n");
 }
 int quit(){
     return 0;
@@ -81,7 +109,7 @@ int main()
         printf("Row %d\n", h);
         scanf(" %d",&i);
         h++;
-        price[count] = i;
+        rowprice[count] = i;
         
     }
     board();
