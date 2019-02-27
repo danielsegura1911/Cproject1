@@ -1,0 +1,89 @@
+
+#include <stdio.h>
+    int price[15];
+    int map[15][30];
+    
+int prices(){
+    int row;
+    for (int count=1; count<=15; count++){
+        printf("row:%d",row);
+        row++;
+        printf(" $%d\n",price[count]);
+    }
+    board();
+}
+int tickets(){
+    
+}
+int seats(){
+    
+    for(int count=0; count <=15; count++){
+        for(int second = 0; second <= 30; second++){
+          int i = map[count][second];
+          if(i == 1){
+              printf("*");
+          }
+          else{
+              printf("#");
+          }
+        }
+    }
+    board();
+    
+}
+int sales(){
+    
+}
+int quit(){
+    return 0;
+}
+    
+    int board(){
+         int input;
+    printf("**********Theater************\n");
+    printf("1. View Seat prices\n");
+    printf("2. purchase tickets\n");
+    printf("3. veiw seat avalabiltiy\n");
+    printf("4. Veiw ticket sales");
+    printf("5. Quit\n");
+    printf("Enter your choice (1-5):\n");
+    scanf("%d", &input);
+    printf("you entered:%d\n",input);
+    
+    if (input == 1){
+        prices();
+    }
+    else if (input == 2){
+        tickets();
+    }
+    else if (input == 3){
+        seats();
+    }
+    else if (input == 4){
+        sales();
+    }
+    else if (input == 5){
+        quit();
+    }
+    else{
+        printf("error invalid input\n");
+        board();
+    }
+    }
+
+
+int main()
+{
+    int h = 1;
+    printf("Please enter the prices for each row\n");
+    for(int count = 0; count<= 14; count++){
+        int i;
+        printf("Row %d\n", h);
+        scanf(" %d",&i);
+        h++;
+        price[count] = i;
+        
+    }
+    board();
+    
+}
