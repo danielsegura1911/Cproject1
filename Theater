@@ -19,7 +19,7 @@ int tickets(){
     int choice2;
     int input = 0;
     printf("please pick what row you would like\n");
-    scanf("%d\n", &choice1);
+    scanf("%d", &choice1);
     printf("row", choice1);
     printf("please pick what seat you would like in that row\n");
     scanf("%d", &choice2);
