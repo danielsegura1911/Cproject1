@@ -22,7 +22,7 @@ int tickets(){
     scanf("%d\n", &choice1);
     printf("row", choice1);
     printf("please pick what seat you would like in that row\n");
-    scanf("%d\n", &choice2);
+    scanf("%d", &choice2);
     printf("row%d\n", choice1);
     printf("seat%d\n", choice2);
     choice1--;
@@ -32,7 +32,7 @@ int tickets(){
     printf("Would you like to buy another ticket?\n");
     printf("1. yes\n");
     printf("2. no\n");
-    scanf("%d\n", &input);
+    scanf("%d", &input);
     if(input==1){
         tickets();
     }
